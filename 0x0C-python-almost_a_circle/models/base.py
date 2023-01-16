@@ -56,21 +56,6 @@ class Base:
                 list_dic.append(list_objs[i].to_dictionary())
 
         lists = cls.to_json_string(list_dic)
-
-
-    
-          
-            
-    
-
-          
-          
-            
-    
-
-          
-    
-    @@ -88,10 +91,13 @@ def save_to_file_csv(cls, list_objs):
   
         with open(filename, 'w') as f:
             f.write(lists)
@@ -164,17 +149,7 @@ class Base:
                 matrix.append(list_dic[:])
 
         with open(filename, 'w') as writeFile:
-            writer = csv.writer(writeFile)
-
-    
-          
-            
-    
-
-          
-    
-    
-  
+            writer = csv.writer(writeFile)  
             writer.writerows(matrix)
     @classmethod
     def load_from_file_csv(cls):
