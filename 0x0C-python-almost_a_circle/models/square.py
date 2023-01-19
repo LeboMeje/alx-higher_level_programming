@@ -3,6 +3,8 @@
 inheritance of class Rectangle
 """
 from models.rectangle import Rectangle
+
+
 class Square(Rectangle):
     """ Class Rectangle """
 
@@ -11,7 +13,7 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-  
+
         """ str special method """
         str_square = "[Square] "
         str_id = "({}) ".format(self.id)
@@ -38,7 +40,7 @@ class Square(Rectangle):
         str_size = "{}".format(self.size)
 
         return str_rectangle + str_id + str_xy + str_size
-  
+
     def update(self, *args, **kwargs):
         """ update method """
         if args is not None and len(args) is not 0:
@@ -60,8 +62,8 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ Returns a dictionary with attributes """
         list_atr = ['id', 'size', 'x', 'y']
-        dict_res = {}    
-  
+        dict_res = {}
+
         for key in list_atr:
             if key == 'size':
                 dict_res[key] = getattr(self, 'width')
