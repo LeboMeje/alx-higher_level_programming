@@ -3,9 +3,12 @@
 import json
 import csv
 import os.path
+
+
 class Base:
     """ Class Base """
     __nb_objects = 0
+
     def __init__(self, id=None):
         """ Initializes instances """
         if id is not None:
@@ -13,20 +16,25 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ List to JSON string """
         if list_dictionaries is None or list_dictionaries == "[]":
             return "[]"
         return json.dumps(list_dictionaries)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ Save object in a file """
+
 #!/usr/bin/python3
 """ Module that contains class Base """
 import json
 import csv
 import os.path
+
+
 class Base:
     """ Class Base """
     __nb_objects = 0
@@ -37,12 +45,14 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """ List to JSON string """
         if list_dictionaries is None or list_dictionaries == "[]":
             return "[]"
         return json.dumps(list_dictionaries)
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ Save object in a file """
@@ -59,12 +69,14 @@ class Base:
   
         with open(filename, 'w') as f:
             f.write(lists)
+    
     @staticmethod
     def from_json_string(json_string):
         """ JSON string to dictionary """
         if not json_string:
             return []
         return json.loads(json_string)
+    
     @classmethod
     def create(cls, **dictionary):
         """ Create an instance """
@@ -74,6 +86,7 @@ class Base:
             new = cls(10)
         new.update(**dictionary)
         return new
+    
     @classmethod
     def load_from_file(cls):
         """ Returns a list of instances """
@@ -87,6 +100,7 @@ class Base:
         for index in range(len(list_cls)):
             list_ins.append(cls.create(**list_cls[index]))
         return list_ins
+    
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ Method that saves a CSV file """
@@ -99,12 +113,14 @@ class Base:
             list_keys = ['id', 'size', 'x', 'y']
         with open(filename, 'w') as f:
             f.write(lists)
+    
     @staticmethod
     def from_json_string(json_string):
         """ JSON string to dictionary """
         if not json_string:
             return []
         return json.loads(json_string)
+    
     @classmethod
     def create(cls, **dictionary):
         """ Create an instance """
@@ -114,6 +130,7 @@ class Base:
             new = cls(10)
         new.update(**dictionary)
         return new
+    
     @classmethod
     def load_from_file(cls):
         """ Returns a list of instances """
@@ -127,6 +144,7 @@ class Base:
         for index in range(len(list_cls)):
             list_ins.append(cls.create(**list_cls[index]))
         return list_ins
+    
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ Method that saves a CSV file """
@@ -151,6 +169,7 @@ class Base:
         with open(filename, 'w') as writeFile:
             writer = csv.writer(writeFile)  
             writer.writerows(matrix)
+    
     @classmethod
     def load_from_file_csv(cls):
         """ Method that loads a CSV file """
@@ -175,6 +194,7 @@ class Base:
             list_ins.append(cls.create(**matrix[index]))
         return list_ins
             writer.writerows(matrix)
+    
     @classmethod
     def load_from_file_csv(cls):
         """ Method that loads a CSV file """
