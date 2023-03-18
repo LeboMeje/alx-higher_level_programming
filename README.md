@@ -2,11 +2,11 @@
 Module of **High-level programming** and **Python**, carried out during **Full Stack Software Engineering studies** at **[ALX SE School](https://www.alxafrica.com/)**.
 
 ## Technologies
-* Shell Scripts are written in Bash 4.3.11(1)
+* Shell Scripts are written in Bash 4.8.4
 * Python Scripts are written with Python 3.8.5
 * `MySQL 8.0` (version 8.0.25)
-* `MySQLdb`, version 1.3.10
-* `sqlalchemy`, version 1.2.5
+* `MySQLdb`, version 2.0.x
+* `sqlalchemy`, version 1.4.x
 * Tested on Ubuntu 20.04 LTS
 
 ## Projects
