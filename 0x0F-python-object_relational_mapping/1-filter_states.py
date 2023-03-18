@@ -16,5 +16,5 @@ if __name__ == '__main__':
     LIKE 'N%';")
     states = cur.fetchall()
 
-    for state in states:  
+    for state in states:
         print(state)
